@@ -1,0 +1,21 @@
+<div>
+<app-navbar></app-navbar>
+
+<div class="teams-page">
+  <h1>Teams</h1>
+  <div class="teams-container">
+    <div *ngFor="let team of teams" class="team-card">
+      <app-team-card [team]="team"></app-team-card>
+    </div>
+
+    <app-team-overlay 
+      *ngIf="showOverlay" 
+      [showOverlay]="showOverlay"
+      (closeOverlay)="showOverlay = false" 
+      (newTeamAdded)="addTeam($event)">
+    </app-team-overlay>
+  </div>
+  <div class="button-container">
+    <button *ngIf="currentUser.admin" class="add-team-button" (click)="showOverlay = true">Add New Team</button>
+  </div>
+</div>

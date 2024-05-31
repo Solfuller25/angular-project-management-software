@@ -1,0 +1,11 @@
+select {
+    height:75px;
+    width: 300px;
+    background-color: #FFF;
+    color: #5533FF;
+    border: 2px solid #DEE;
+    border-radius: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}

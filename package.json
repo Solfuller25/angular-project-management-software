@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "scripts": {
+    "start": "concurrently \"cd frontend && ng serve\" \"cd backend && mvn clean install spring-boot:run\""
+  }
+}

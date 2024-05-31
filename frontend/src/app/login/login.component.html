@@ -1,0 +1,48 @@
+<div class="login-page">
+  <div class="login-logo-container">
+    <h1>Cook Systems</h1>
+  </div>
+
+  <div class="login-container">
+    <div class="login-box">
+      <div class="logo-background">
+        <div class="logo">
+          <img src="assets/loginLogo.svg" alt="Log in logo" />
+        </div>
+      </div>
+      <form>
+        <div class="form-group">
+          <input
+            type="text"
+            id="username"
+            [(ngModel)]="username"
+            name="username"
+            placeholder="username"
+          />
+        </div>
+        <div class="form-group">
+          <input
+            type="password"
+            id="password"
+            [(ngModel)]="password"
+            name="password"
+            placeholder="password"
+          />
+        </div>
+        <button type="button" (click)="loginUser()">Login</button>
+        <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+      </form>
+    </div>
+
+    <div class="logo-img">
+      <div class="logo-content">
+        <img src="assets/cook-logo.svg" alt="Cook Systems Logo" />
+        <p>A project management platform built for the FastTrack program</p>
+        <p>
+          by Rahin Rahman, Solomon Fuller, Cody Junier, Nelson Cheng Lin, and
+          Ekow Thompson
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

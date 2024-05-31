@@ -1,0 +1,50 @@
+/* override browser default */
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* use viewport-relative units to cover page fully */
+/* body {
+  height: 100vh;
+  width: 100vw;
+} */
+
+/* include border and padding in element width and height */
+* {
+  box-sizing: border-box;
+}
+
+/* full-sized  container that fills up the page */
+.container {
+  /* height: 100%;
+  width: 100%; */
+
+  /* example padding, font-size, background, etc */
+  padding: 10px;
+  font-size: 20px;
+  background-color: #051622;
+  color: #1BA098;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+select {
+    height:75px;
+    width: 300px;
+    background-color: #FFF;
+    color: #5533FF;
+    border: 2px solid #DEE;
+    border-radius: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.company-header {
+    font-size: 100px;
+    margin-top: 30vh;
+}

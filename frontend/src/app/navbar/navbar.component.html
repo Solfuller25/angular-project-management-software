@@ -1,0 +1,17 @@
+<div class="navbar-container">
+  <nav id="navbar">
+    <ul>
+      <li class="user-info">Logged in as: {{ firstName }} {{ lastName }}</li>
+      <li class="burger" (click)="toggleMenu()">
+        <i class="icons">{{ isMenuOpen ? "&#10005;" : "☰" }}</i>
+      </li>
+      <li class="menu" [class.is-open]="isMenuOpen">
+        <a class="menu-item" routerLink="/home">Home</a>
+        <a class="menu-item" routerLink="/teams">Teams</a>
+        <a *ngIf="isAdmin" class="menu-item" routerLink="/company">Company</a>
+        <a *ngIf="isAdmin" class="menu-item" routerLink="/users">Users</a>
+        <a class="menu-item" (click)="logoutUser()" routerLink="/">Logout</a>
+      </li>
+    </ul>
+  </nav>
+</div>

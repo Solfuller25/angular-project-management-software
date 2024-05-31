@@ -1,0 +1,26 @@
+<div>
+  <tbody class="user-container">
+    <tr class="row-item table-name">
+      <td>
+        {{ user.profile.firstName + " " + user.profile.lastName }}
+      </td>
+    </tr>
+    <tr class="row-item table-email">
+      <td>
+        {{ user.profile.email }}
+      </td>
+    </tr>
+
+    <tr class="row-item table-active">
+      <td><span [ngClass]="user.active ? 'green toggle-button' : 'red toggle-button'" (click)="toggleActive()">{{ user.active ? "YES" : "NO" }}</span></td>
+    </tr>
+    <tr class="row-item table-admin">
+      <td [ngClass]="user.admin ? 'green' : 'red'">{{ user.admin ? "YES" : "NO" }}</td>
+    </tr>
+    <tr class="row-item table-status">
+      <td>
+        {{ user.status }}
+      </td>
+    </tr>
+  </tbody>
+</div>

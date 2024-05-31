@@ -1,0 +1,117 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow: hidden;
+}
+
+/* body {
+  height: 100vh;
+  width: 100vw;
+} */
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  /* height: 100vh;
+  width: 100%; */
+  padding: 10px;
+  font-size: 20px;
+  background-color: #051622;
+  color: #1ba098;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.page-header {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.page-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 100px;
+  margin-top: 5vh;
+
+}
+
+h1 {
+  font-size: 100px;
+  margin: 10px;
+}
+
+.users-table {
+  border: 2px solid #deb992;
+  border-radius: 20px;
+  width: 80vw;
+}
+
+.table-header {
+  display: flex;
+  color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #deb992;
+  border-width: 100%;
+}
+
+hr {
+  border-color: #deb992;
+}
+
+.header-component {
+  text-align: center;
+}
+
+.name-header {
+  width: 25%;
+}
+
+.email-header {
+  width: 35%;
+}
+
+.active-header {
+  width: 10%;
+}
+
+.admin-header {
+  width: 10%;
+}
+
+.status-header {
+  width: 20%;
+}
+
+.empty-registry-message {
+  color: #ee1111;
+  text-align: center;
+}
+
+button {
+  color: white;
+  font-size: 1.25em;
+  width: 10em;
+  background-color: #1ba098;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 3vh;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #10615c;
+}
+
+button:active {
+  background-color: #093835;
+}

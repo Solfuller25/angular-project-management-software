@@ -1,0 +1,21 @@
+<div class="card-container">
+  <div class="header">
+    <h2>{{ team.name }}</h2>
+    <button
+      class="projects-button"
+      [routerLink]="['/projects']"
+      [queryParams]="{ teamId: team.id }"
+    >
+      View Projects
+    </button>
+  </div>
+  <hr />
+  <div class="members-div">
+    <h4>Members</h4>
+    <div *ngFor="let member of team.teammates">
+      <span class="name"
+        >{{ member.profile.firstName }} {{ member.profile.lastName }}</span
+      >
+    </div>
+  </div>
+</div>

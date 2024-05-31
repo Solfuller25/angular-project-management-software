@@ -1,0 +1,62 @@
+<app-navbar></app-navbar>
+
+<div class="home-page">
+    <h1>Announcements</h1>
+    <button *ngIf="currentUser.admin" class="new-announcement" (click)="openPopup()">New</button>
+    <div class="announcements-container">
+        <div *ngFor="let announcement of announcements" class="announcement" [ngClass]="{'animate-out': announcement.animateOut}">
+            <div class="buttons">
+                <button class="toggle-button" (click)="toggleMinimize(announcement)">
+                    <ng-container *ngIf="announcement.minimized; else maximizeIcon">
+                        <img src="assets/max.svg" alt="Minimize">
+                    </ng-container>
+                    <ng-template #maximizeIcon>
+                        <img src="assets/min.svg" alt="Maximize">
+                    </ng-template>
+                </button>
+                <button class="close-button" (click)="removeAnnouncement(announcement)">
+                    <img src="assets/close.svg" alt="Close">
+                </button>
+            </div>
+            <div class="announcement-meta">
+                <h2>{{ announcement.title }}</h2>
+                <h2 *ngIf="!announcement.minimized">{{ announcement.date | date: 'MMMM d, yyyy' }}</h2>
+            </div>
+            <div class="announcement-meta">
+                <h4 *ngIf="!announcement.minimized">by {{ announcement.author.profile.firstName }} {{ announcement.author.profile.lastName }}</h4>
+                <h4 *ngIf="!announcement.minimized">at {{ announcement.date | date: 'hh:mm:ss a' }}</h4>
+            </div>
+
+            <p *ngIf="!announcement.minimized">{{ announcement.message }}</p>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="showPopup" class="popup-overlay">
+    <div class="popup-form">
+        <h2>New Announcement</h2>
+        <form (submit)="onSubmit()">
+            <div class="form-group">
+                <label for="title">Title:</label>
+                <input
+                    type="text"
+                    id="title"
+                    name="title"
+                    [(ngModel)]="newAnnouncement.title"
+                />
+            </div>
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea
+                    id="description"
+                    name="description"
+                    [(ngModel)]="newAnnouncement.message"
+                ></textarea>
+            </div>
+            <div class="button-container">
+                <button class="new-submit" type="submit">Submit</button>
+                <button class="close-btn" (click)="closePopup()">Close</button>
+            </div>
+        </form>
+    </div>
+</div>

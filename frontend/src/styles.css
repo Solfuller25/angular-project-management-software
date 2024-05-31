@@ -1,0 +1,51 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #051622;
+  overflow-x: hidden;
+  margin: 0;
+}
+
+button {
+  font-family: "Josefin Sans", sans-serif;
+}
+
+/* The Modal (background) */
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #0b2d45;
+  color: #deb992;
+  margin: 15% auto;
+  padding: 20px;
+  border-radius: 20px;
+  width: 40%;
+}
+
+.close {
+  color: #be0d0d;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #720808;
+  text-decoration: none;
+  cursor: pointer;
+}

@@ -1,0 +1,59 @@
+.user-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+td {
+  width: 100%;
+  text-align: center;
+}
+
+.green {
+  color: #18a118;
+}
+
+.red {
+  color: #BE0D0D;
+}
+
+.toggle-button:hover {
+  cursor: pointer;
+}
+
+.no-underline {
+  text-decoration: none;
+}
+
+.row-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.table-name {
+  width: 25%;
+}
+
+.table-email {
+  width: 35%;
+}
+
+.table-active {
+  width: 10%;
+}
+
+.table-admin {
+  width: 10%;
+}
+
+.table-status {
+  width: 20%;
+}
+
+.row-item td {
+  width: 100%;
+}

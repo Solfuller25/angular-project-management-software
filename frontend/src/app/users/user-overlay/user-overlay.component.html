@@ -1,0 +1,47 @@
+<div class="modal">
+    <div class="modal-content">
+        <span #close class="close" (click)="hideModal()">&times;</span>
+        <div class="center-content">
+            <div class="form-field">
+                <div class="adjacent-inputs">
+                    <input class="input" (blur)="setFirstName($event)" placeholder="first name"/>
+                    <input class="input" (blur)="setLastName($event)" placeholder="last name"/>
+                </div>
+                <div class="padding-right">
+                    <input class="input" (blur)="setUsername($event)" placeholder="username"/>
+                    <input class="input" (blur)="setEmail($event)" placeholder="email"/>
+                    <input class="input" (blur)="setPhone($event)" placeholder="phone"/>
+                </div>
+                <div class="adjacent-inputs">
+                    <input class="input" (blur)="setPassword($event)" [type]="passwordType" placeholder="password"/>
+                    <input class="input" (blur)="setConfirmPassword($event)" [type]="passwordType" placeholder="confirm password"/>
+                    <button (click)="showPasswordClick()">
+                        <i class="fa fa-eye" aria-hidden="true" *ngIf="!showPassword"></i>
+                        <i class="fa fa-eye-slash" aria-hidden="true" *ngIf="showPassword"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="admin-section">
+                <div id="adminPrompt">
+                    <p>Make user an admin?</p>
+                    <select (change)="setAdminRole($event)">
+                        <option [defaultSelected]="true">Pick An Option</option>
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+                </div>
+                <div id="companySelection" *ngIf="showCompanyOptions">
+                    <p>Choose companies to admin:</p>
+                    <div *ngFor="let company of loggedInUser.companies">
+                        <div class="company-check">
+                            <input type="checkbox" [value]="company.id" (change)="toggleCompany(company.id)">
+                            {{ company.name }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="error-message" *ngIf="errorMessage.length > 0">{{ errorMessage }}</p>
+            <button (click)="submitNewUser()">Submit</button>
+        </div>
+    </div>
+</div>

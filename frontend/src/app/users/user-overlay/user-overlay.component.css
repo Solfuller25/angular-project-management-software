@@ -1,0 +1,122 @@
+@media (max-width: 900px) {
+  .modal-content {
+    width: 75vw;
+  }
+}
+
+.center-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  margin-top: 20px;
+}
+
+.padding-right {
+  padding-right: 22px;
+}
+
+.adjacent-inputs {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+input {
+  padding-left: 2px;
+  color: #deb992;
+  background-color: #0b2d45;
+  border: 0;
+  border-bottom: 1px solid #deb992;
+  height: 25px;
+  margin: 10px;
+  width: 100%;
+  font-size: 16px;
+}
+
+input:focus {
+  outline: 2px solid #deb992;
+  border-radius: 5px;
+  border: 0;
+
+}
+
+#adminPrompt {
+  text-align: center;
+  margin: 30px;
+  margin-top: 15px;
+}
+
+#companySelection {
+  text-align: center;
+  margin: 30px;
+}
+
+.admin-section {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.company-check {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.company-check input {
+    margin: 0;
+    height: 1.5em;
+    width: 1.5em;
+    margin: 10px;
+}
+
+select {
+  height: 2em;
+  width: 12em;
+  background-color: #fff;
+  color: #5533ff;
+  border: 2px solid #dee;
+  border-radius: 10px;
+  font-size: 24px;
+  text-align: center;
+}
+
+select.multiple-select {
+  height: 2.6em;
+}
+
+button {
+  color: white;
+  font-size: 1.25em;
+  width: 25%;
+  background-color: #1ba098;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #10615c;
+}
+
+button:active {
+  background-color: #093835;
+}
+
+.error-message {
+  color: red;
+  text-align: center;
+  width: 75%;
+}

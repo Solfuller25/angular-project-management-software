@@ -1,0 +1,51 @@
+<div class="fix">
+  <app-navbar></app-navbar>
+
+  <div class="projects-page">
+    <button class="back-button" routerLink="/teams">Back</button>
+    <h1>Projects</h1>
+    <button
+      *ngIf="currentUser.admin"
+      class="new-project"
+      (click)="openNewProjectPopup()"
+    >
+      New Project
+    </button>
+    <div class="projects-container">
+      <app-project-card
+        class="project-card"
+        *ngFor="let project of projects"
+        [project]="project"
+        [isAdmin]="currentUser.admin"
+        (projectSaved)="reloadProjects()"
+      ></app-project-card>
+    </div>
+  </div>
+
+  <div *ngIf="showNewProjectPopup" class="popup-overlay">
+    <div class="popup-form">
+      <h2>New Project</h2>
+      <form (submit)="onSubmit()">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            [(ngModel)]="newProject.name"
+          />
+        </div>
+        <div class="form-group">
+          <label for="description">Description:</label>
+          <textarea
+            id="description"
+            name="description"
+            [(ngModel)]="newProject.description"
+          ></textarea>
+        </div>
+        <button class="new-submit" type="submit">Submit</button>
+      </form>
+      <button class="close-btn" (click)="closeNewProjectPopup()">Close</button>
+    </div>
+  </div>
+</div>
